@@ -5,11 +5,12 @@ import { useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 
 type Props = {
+  full?: boolean;
   label: string;
   items: JSX.Element[];
 };
 
-function Dropdown({ label, items }: Props) {
+function Dropdown({ label, items, full }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const ref = useRef(null);
@@ -22,7 +23,9 @@ function Dropdown({ label, items }: Props) {
     <div className="relative">
       <button
         type="button"
-        className={`flex border-[0.5px] border-solid border-[#7A7A7A] gap-2 items-center py-3 px-6 rounded-[4px] ${
+        className={`${
+          full && 'w-full'
+        } flex justify-between border-[0.5px] border-solid border-[#7A7A7A] gap-2 items-center py-3 px-6 rounded-[4px] ${
           isOpen && 'shadow-inner'
         }`}
         onClick={() => {
@@ -70,7 +73,9 @@ function Dropdown({ label, items }: Props) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-10 z-40 bg-white rounded-[4px] shadow-xl overflow-hidden"
+            className={`${
+              full && 'w-full'
+            } absolute top-10 z-40 bg-white rounded-[4px] shadow-xl overflow-hidden`}
             ref={ref}
           >
             {items}

@@ -8,32 +8,24 @@ import Pic from 'util/Pic';
 
 const tabOptions = ['All', 'For Sale', 'For Rent'];
 
-const categories = [
-  { label: 'All', link: '/blogs' },
-  { category: 'business', label: 'Business', link: '/blogs?category=business' },
+const types = [
+  { label: 'BHK Type' },
+  { label: 'Business' },
   {
-    category: 'marketing',
     label: 'Marketing',
-    link: '/blogs?category=marketing',
   },
   {
-    category: 'optimization',
     label: 'Optimization',
-    link: '/blogs?category=optimization',
   },
   {
-    category: 'technology',
     label: 'Technology',
-    link: '/blogs?category=technology',
   },
   {
-    category: 'ux-design',
     label: 'UX Design',
-    link: '/blogs?category=ux-design',
   },
 ];
 
-const FilterOptions = categories.map((item) => (
+const FilterOptions = types.map((item) => (
   <div className="block py-2 px-4 cursor-pointer hover:bg-slate-200 font-medium">
     {item.label}
   </div>
@@ -42,7 +34,8 @@ const FilterOptions = categories.map((item) => (
 export default function Hero() {
   const [activeTab, setActiveTab] = useState(0);
   const [keyword, setKeyword] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
+  // const [selectedLabel, setSelectedLabel] = useState('');
+  const [selectedLabel] = useState('');
 
   return (
     <div className="relative">
@@ -72,22 +65,27 @@ export default function Hero() {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center gap-4 items-center w-full sm:w-[37rem] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] p-[14px] bg-white rounded-[7px] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-          <div className="w-full md:w-7/12">
-            <Input
-              value={keyword}
-              onChange={(ev) => setKeyword(ev.target.value)}
-              placeholder="Enter a location or a keyword..."
-            />
-          </div>
-          <div className="">
-            <Dropdown
-              label={
-                categories.find((item) => item.category === selectedCategory)
-                  ?.label || 'All'
-              }
-              items={FilterOptions}
-            />
+        <div className="flex flex-col md:flex-row md:items-center gap-4 items-center w-full sm:w-[37rem] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] p-[14px] bg-white rounded-tr-[7px] rounded-b-[7px] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+          <div className="w-full md:w-7/12 flex gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-4 w-full">
+              <div className="w-full sm:w-2/3">
+                <Input
+                  value={keyword}
+                  onChange={(ev) => setKeyword(ev.target.value)}
+                  placeholder="Enter a location or a keyword..."
+                />
+              </div>
+              <div className="w-full sm:w-1/3">
+                <Dropdown
+                  full
+                  label={
+                    types.find((item) => item.label === selectedLabel)?.label
+                    || 'All'
+                  }
+                  items={FilterOptions}
+                />
+              </div>
+            </div>
           </div>
           <div className="w-full md:w-5/12 flex gap-4 items-center mx-auto max-w-max">
             <Button white>
