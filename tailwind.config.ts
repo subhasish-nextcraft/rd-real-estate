@@ -23,10 +23,10 @@ const config: Config = {
       },
       colors: {
         pry: '#0A76EB',
+        pryText: '#254E7A',
       },
       fontFamily: {
         sans: ['var(--font-montserrat)'],
-        open: ['var(--font-opensans)'],
       },
     },
   },

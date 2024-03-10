@@ -24,8 +24,8 @@ export default function Nav() {
 
   return (
     <>
-      <div className="shadow-md gradient fixed top-0 h-[5.25rem] w-full z-40 transition md:rounded-b-[2.5rem] lg:rounded-b-[2.75rem] xl:rounded-b-full">
-        <div className="max-w-7xl mx-auto h-full">
+      <div className="drop-shadow-[0px_4px_6px_rgba(0,0,0,0.25)] gradient fixed top-0 h-[5.25rem] w-full z-40 transition md:rounded-b-[2.5rem] lg:rounded-b-[2.75rem] xl:rounded-b-full">
+        <div className="max-w-[92rem] mx-auto h-full">
           <div className="container mx-auto flex justify-between gap-4 items-center h-full px-4">
             <Link href="/">
               <div className="flex flex-col items-center gap-[1px]">
@@ -40,16 +40,16 @@ export default function Nav() {
               </div>
             </Link>
 
-            <div className="flex gap-4 justify-between items-center">
+            <div className="flex gap-6 justify-between items-center">
               <div className="gap-4 hidden lg:flex">
                 {navLinks.map((item) => (
                   <Link
                     key={item.route}
-                    className="text-lg font-medium text-white gap-[2px]"
+                    className="text-lg font-medium gap-[2px]"
                     href={item.route}
                   >
                     <div className="flex flex-col">
-                      <p className="whitespace-nowrap">{item.label}</p>
+                      <p className="whitespace-nowrap text-white">{item.label}</p>
                       {((pathname.startsWith('/blogs')
                         && item.route === '/blogs')
                         || pathname === item.route) && (

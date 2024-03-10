@@ -10,3 +10,7 @@ html {
 .gradient {
   @apply bg-gradient-to-r from-[#0C71BE] to-[#6C6C6C];
 }
+
+* {
+  color: #3a3a3a;
+}
