@@ -22,6 +22,7 @@ function Dropdown({ label, items, full }: Props) {
   return (
     <div className="relative">
       <button
+        ref={ref}
         type="button"
         className={`${
           full && 'w-full'
@@ -76,7 +77,6 @@ function Dropdown({ label, items, full }: Props) {
             className={`${
               full && 'w-full'
             } absolute top-10 z-40 bg-white rounded-[4px] shadow-xl overflow-hidden`}
-            ref={ref}
           >
             {items}
           </motion.div>
