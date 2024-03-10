@@ -39,7 +39,7 @@ export default function Hero() {
 
   return (
     <div className="relative">
-      <div className="h-[22rem] sm:h-[28rem] xl:h-[30rem] w-full">
+      <div className="h-[26rem] sm:h-[28rem] xl:h-[30rem] w-full">
         <Pic src="/home/hero.png" alt="" objectFit="cover" />
       </div>
 

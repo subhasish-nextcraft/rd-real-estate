@@ -1,4 +1,3 @@
-import Footer from 'comp/Footer';
 import Nav from 'comp/Nav';
 import AuthProvider from 'context/AuthProvider';
 import { Montserrat } from 'next/font/google';
@@ -6,6 +5,7 @@ import { ReactNode } from 'react';
 import { Toaster } from 'react-hot-toast';
 import Analytics from 'util/Analytics';
 import './globals.css';
+import TopWrapper from 'util/TopWrapper';
 
 type Props = {
   children?: ReactNode;
@@ -35,11 +35,13 @@ export default async function RootLayout({ children }: Props) {
         <AuthProvider>
           <Toaster position="bottom-center" reverseOrder={false} />
           <Nav />
-          <div className="min-h-screen pb-[0.75rem] md:pb-[1.5rem] lg:pb-[2.5rem] mx-auto">
+
+          <TopWrapper>
             {children}
-          </div>
-          <div id="mainModalContainer" />
-          <Footer />
+            <div id="mainModalContainer" />
+          </TopWrapper>
+
+          {/* <Footer /> */}
         </AuthProvider>
       </body>
     </html>

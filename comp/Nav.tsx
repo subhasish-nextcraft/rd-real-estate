@@ -73,11 +73,11 @@ export default function Nav() {
             <button
               onClick={() => setIsSidebarOpen(true)}
               type="button"
-              className="md:hidden h-8 w-8"
+              className="md:hidden h-8 w-8 text-white"
               aria-label="menu"
             >
               <svg
-                className="w-full h-full flex-none text-white"
+                className="w-full h-full flex-none"
                 fill="none"
                 strokeWidth={2}
                 stroke="currentColor"
