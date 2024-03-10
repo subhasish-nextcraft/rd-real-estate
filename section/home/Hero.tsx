@@ -65,8 +65,8 @@ export default function Hero() {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-center gap-4 items-center w-full sm:w-[37rem] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] p-[14px] bg-white rounded-tr-[7px] rounded-b-[7px] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-          <div className="w-full md:w-7/12 flex gap-4">
+        <div className="flex flex-col md:flex-row md:items-center gap-4 items-center justify-between w-full sm:w-[37rem] md:w-[45rem] lg:w-[60rem] xl:w-[75rem] py-4 px-4 sm:px-6 bg-white rounded-tr-[7px] rounded-b-[7px] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+          <div className="w-full md:w-7/12 xl:w-8/12 flex gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-4 w-full">
               <div className="w-full sm:w-2/3">
                 <Input
@@ -87,7 +87,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-5/12 flex gap-4 items-center mx-auto max-w-max">
+          <div className="w-full md:w-5/12 xl:w-4/12 flex gap-4 items-center mx-auto md:mx-0 max-w-max">
             <Button white>
               <div className="flex items-center gap-2">
                 <img src="/home/filter.svg" alt="" className="h-6 w-6" />
