@@ -66,7 +66,7 @@ export default function Nav() {
 
             <div className="hidden sm:block">
               <Button shadow curved bold gradient>
-                React Us
+                Reach Us
               </Button>
             </div>
 

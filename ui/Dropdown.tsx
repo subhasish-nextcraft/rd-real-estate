@@ -22,22 +22,14 @@ function Dropdown({ label, items }: Props) {
     <div className="relative">
       <button
         type="button"
-        className={`flex ${
-          !isOpen && 'ring-1 ring-pry-500 bg-white'
-        } gap-1 items-center py-1 px-2 rounded-xl ${
-          isOpen && 'shadow-inner bg-pry-500'
+        className={`flex border-[0.5px] border-solid border-[#7A7A7A] gap-2 items-center py-3 px-6 rounded-[4px] ${
+          isOpen && 'shadow-inner'
         }`}
         onClick={() => {
           setIsOpen((prev) => !prev);
         }}
       >
-        <p
-          className={`text-pry-700 font-medium ${
-            isOpen ? 'text-white' : 'text-pry-700'
-          }`}
-        >
-          {label}
-        </p>
+        <p className="text-pry-700 font-medium">{label}</p>
         {!isOpen ? (
           <svg
             className={`h-5 w-5 ${isOpen ? 'text-white' : 'text-pry-700'}`}
@@ -78,7 +70,7 @@ function Dropdown({ label, items }: Props) {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-10 z-40 bg-white rounded-xl shadow-xl overflow-hidden"
+            className="absolute top-10 z-40 bg-white rounded-[4px] shadow-xl overflow-hidden"
             ref={ref}
           >
             {items}
