@@ -60,7 +60,7 @@ export default function Input({
         className={twMerge(
           `w-full ${
             !disabled && ''
-          } focus:outline-none rounded-md focus:border-pry-500 py-3 px-6 bg-white border-[0.5px] border-solid border-[#7A7A7A] overflow-ellipsis ${
+          } focus:outline-none rounded-[4px] focus:border-pry-500 py-3 px-6 bg-white border-[0.5px] border-solid border-[#7A7A7A] overflow-ellipsis ${
             inputIcon && 'pr-8'
           } ${className}`,
         )}
